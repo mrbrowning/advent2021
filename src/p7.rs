@@ -156,18 +156,13 @@ pub fn run(args: &[String]) {
     let (mut boards, picks) = parse_game(file);
 
     let mut answer: Option<u32> = None;
-    for (i, call) in picks.iter().enumerate() {
-        let mut found = false;
+    'outer: for (i, call) in picks.iter().enumerate() {
         for board in boards.iter_mut() {
             board.play(*call);
             if i >= 5 && board.is_winning() {
                 answer = board.sum();
-                found = true;
+                break 'outer;
             }
-        }
-
-        if found {
-            break;
         }
     }
 

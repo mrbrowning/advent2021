@@ -9,9 +9,7 @@ pub fn run(args: &[String]) {
     let (mut boards, picks) = parse_game(file);
 
     let mut losing_boards: HashSet<usize> = (0..boards.len()).collect();
-    for call in picks.iter() {
-        let mut found = false;
-
+    'outer: for call in picks.iter() {
         for (i, board) in boards.iter_mut().enumerate() {
             if !losing_boards.contains(&i) {
                 continue;
@@ -21,13 +19,8 @@ pub fn run(args: &[String]) {
             if board.is_winning() && losing_boards.len() > 1 {
                 losing_boards.remove(&i);
             } else if board.is_winning() {
-                found = true;
-                break;
+                break 'outer;
             }
-        }
-
-        if found {
-            break;
         }
     }
 
