@@ -3,6 +3,11 @@ use std::convert::{identity, TryInto};
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
+// Taking a more imperative and stateful approach here with the Board model, because even though it
+// would still be acceptably fast if I made boards immutable and mapped plays over them, in the
+// absence of structural sharing it would still just feel really wrong to do that many spurious
+// allocations.
+
 pub type BoardCoordinate = (usize, usize);
 
 #[derive(Debug)]

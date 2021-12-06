@@ -3,6 +3,10 @@ use std::collections::HashSet;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
+// I realize you could model this algebraically, finding the y = mx + b form of each line and then
+// solving for mx + b = nx + c and checking if the resulting point is an integer and within the
+// line's endpoints, but I was more interested in messing with ranges for my own edification.
+
 #[derive(Debug, Hash, PartialEq, Eq, Clone, Copy)]
 pub struct Point {
     x: u32,
