@@ -3,6 +3,7 @@ use std::env;
 mod util;
 
 mod p1;
+mod p11;
 mod p2;
 mod p3;
 mod p4;
@@ -49,5 +50,8 @@ fn main() {
     } else if exercise == "9" {
         announce(9);
         p9::run(args);
+    } else if exercise == "11" {
+        announce(11);
+        p11::run(args);
     }
 }
