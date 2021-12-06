@@ -1,23 +1,11 @@
 use std::collections::HashSet;
-use std::fs::File;
-use std::io::BufReader;
 
 use super::p7::*;
+use super::util::*;
 
 pub fn run(args: &[String]) {
-    let filename = match args.len() {
-        0 => "raw_data/input3.txt",
-        1 => args[0].as_str(),
-        _ => args[0].as_str(),
-    };
+    let file = get_file(args, 8).unwrap();
 
-    let raw_file = File::open(filename);
-    if raw_file.is_err() {
-        println!("failed to load file: {:?}", raw_file);
-        return;
-    }
-
-    let file = BufReader::new(raw_file.unwrap());
     let (mut boards, picks) = parse_game(file);
 
     let mut losing_boards: HashSet<usize> = (0..boards.len()).collect();

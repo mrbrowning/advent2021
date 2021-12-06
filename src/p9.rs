@@ -3,6 +3,8 @@ use std::collections::HashSet;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
+use super::util::*;
+
 // I realize you could model this algebraically, finding the y = mx + b form of each line and then
 // solving for mx + b = nx + c and checking if the resulting point is an integer and within the
 // line's endpoints, but I was more interested in messing with ranges for my own edification.
@@ -98,19 +100,7 @@ pub fn overlaps(lines: Vec<Line>) -> u32 {
 }
 
 pub fn run(args: &[String]) {
-    let filename = match args.len() {
-        0 => "raw_data/input5.txt",
-        1 => args[0].as_str(),
-        _ => args[0].as_str(),
-    };
-
-    let raw_file = File::open(filename);
-    if raw_file.is_err() {
-        println!("failed to load file: {:?}", raw_file);
-        return;
-    }
-
-    let file = BufReader::new(raw_file.unwrap());
+    let file = get_file(args, 9).unwrap();
     let lines = parse_lines(file);
 
     println!("Answer is {}", overlaps(lines));

@@ -1,22 +1,10 @@
-use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io::BufRead;
 
 use super::p5::get_digits;
+use super::util::*;
 
 pub fn run(args: &[String]) {
-    let filename = match args.len() {
-        0 => "raw_data/input3.txt",
-        1 => args[0].as_str(),
-        _ => args[0].as_str(),
-    };
-
-    let raw_file = File::open(filename);
-    if raw_file.is_err() {
-        println!("failed to load file: {:?}", raw_file);
-        return;
-    }
-
-    let file = BufReader::new(raw_file.unwrap());
+    let file = get_file(args, 6).unwrap();
 
     let lines: Vec<Vec<u32>> = file
         .lines()

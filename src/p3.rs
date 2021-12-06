@@ -1,6 +1,7 @@
 use regex::Regex;
-use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io::BufRead;
+
+use super::util::*;
 
 pub enum Direction {
     Forward(i32),
@@ -39,19 +40,7 @@ pub fn parse_direction(direction: &str) -> Direction {
 }
 
 pub fn run(args: &[String]) {
-    let filename = match args.len() {
-        0 => "raw_data/input2.txt",
-        1 => args[0].as_str(),
-        _ => args[0].as_str(),
-    };
-
-    let raw_file = File::open(filename);
-    if raw_file.is_err() {
-        println!("failed to load file: {:?}", raw_file);
-        return;
-    }
-
-    let file = BufReader::new(raw_file.unwrap());
+    let file = get_file(args, 3).unwrap();
 
     let distances: (i32, i32) = file
         .lines()
