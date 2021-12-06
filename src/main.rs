@@ -8,6 +8,7 @@ mod p5;
 mod p6;
 mod p7;
 mod p8;
+mod p9;
 
 fn announce(exercise: u8) {
     println!("Running problem {}", exercise);
@@ -43,5 +44,8 @@ fn main() {
     } else if exercise == "8" {
         announce(8);
         p8::run(args);
+    } else if exercise == "9" {
+        announce(9);
+        p9::run(args);
     }
 }
