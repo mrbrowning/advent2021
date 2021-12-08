@@ -3,7 +3,6 @@ use std::env;
 mod util;
 
 mod p1;
-mod p11;
 mod p2;
 mod p3;
 mod p4;
@@ -12,6 +11,9 @@ mod p6;
 mod p7;
 mod p8;
 mod p9;
+mod p11;
+mod p13;
+mod p14;
 
 fn announce(exercise: u8) {
     println!("Running problem {}", exercise);
@@ -53,5 +55,11 @@ fn main() {
     } else if exercise == "11" {
         announce(11);
         p11::run(args);
+    } else if exercise == "13" {
+        announce(13);
+        p13::run(args);
+    } else if exercise == "14" {
+        announce(14);
+        p14::run(args);
     }
 }
