@@ -85,7 +85,7 @@ pub fn parse_landscape(file: BufReader<File>) -> Landscape {
 }
 
 pub fn run(args: &[String]) {
-    let file = get_file(args, 15).unwrap();
+    let file = get_file(args, 17).unwrap();
     let landscape = parse_landscape(file);
 
     let minima = get_minima(&landscape);
