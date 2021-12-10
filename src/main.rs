@@ -2,15 +2,15 @@ use std::env;
 
 mod util;
 
-mod p1;
-mod p2;
-mod p3;
-mod p4;
-mod p5;
-mod p6;
-mod p7;
-mod p8;
-mod p9;
+mod p01;
+mod p02;
+mod p03;
+mod p04;
+mod p05;
+mod p06;
+mod p07;
+mod p08;
+mod p09;
 mod p11;
 mod p13;
 mod p14;
@@ -29,31 +29,31 @@ fn main() {
 
     if exercise == "1" {
         announce(1);
-        p1::run(args);
+        p01::run(args);
     } else if exercise == "2" {
         announce(2);
-        p2::run(args);
+        p02::run(args);
     } else if exercise == "3" {
         announce(3);
-        p3::run(args);
+        p03::run(args);
     } else if exercise == "4" {
         announce(4);
-        p4::run(args);
+        p04::run(args);
     } else if exercise == "5" {
         announce(5);
-        p5::run(args);
+        p05::run(args);
     } else if exercise == "6" {
         announce(6);
-        p6::run(args);
+        p06::run(args);
     } else if exercise == "7" {
         announce(7);
-        p7::run(args);
+        p07::run(args);
     } else if exercise == "8" {
         announce(8);
-        p8::run(args);
+        p08::run(args);
     } else if exercise == "9" {
         announce(9);
-        p9::run(args);
+        p09::run(args);
     } else if exercise == "11" {
         announce(11);
         p11::run(args);

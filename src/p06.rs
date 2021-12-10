@@ -1,6 +1,6 @@
 use std::io::BufRead;
 
-use super::p5::get_digits;
+use super::p05::get_digits;
 use super::util::*;
 
 pub fn run(args: &[String]) {

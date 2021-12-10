@@ -1,6 +1,6 @@
 use std::io::BufRead;
 
-use super::p3::{parse_direction, Direction};
+use super::p03::{parse_direction, Direction};
 use super::util::*;
 
 pub fn run(args: &[String]) {
