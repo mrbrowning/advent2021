@@ -18,6 +18,8 @@ mod p15;
 mod p16;
 mod p17;
 mod p18;
+mod p19;
+mod p20;
 
 fn announce(exercise: u8) {
     println!("Running problem {}", exercise);
@@ -77,5 +79,11 @@ fn main() {
     } else if exercise == "18" {
         announce(18);
         p18::run(args);
+    } else if exercise == "19" {
+        announce(19);
+        p19::run(args);
+    } else if exercise == "20" {
+        announce(20);
+        p20::run(args);
     }
 }
