@@ -22,6 +22,8 @@ mod p19;
 mod p20;
 mod p21;
 mod p22;
+mod p23;
+mod p24;
 
 fn announce(exercise: u8) {
     println!("Running problem {}", exercise);
@@ -93,5 +95,11 @@ fn main() {
     } else if exercise == "22" {
         announce(22);
         p22::run(args);
+    } else if exercise == "23" {
+        announce(23);
+        p23::run(args);
+    } else if exercise == "24" {
+        announce(24);
+        p24::run(args);
     }
 }
